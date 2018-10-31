@@ -1,3 +1,4 @@
 {
-  "name": "Blog API - Production"
+  "name": "Blog API",
+  "db": "blog_db"
 }

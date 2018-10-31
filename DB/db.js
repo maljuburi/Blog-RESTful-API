@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
+const config = require("config");
 
 module.exports = () => {
+  console.log(config.get("db"));
   mongoose
     .connect(
-      "mongodb://localhost/restful_api",
+      config.get("db"),
       { useNewUrlParser: true }
     )
     .then(() => console.log("Connected to MongoDB"))
