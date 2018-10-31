@@ -1,8 +1,4 @@
-require("express-async-errors");
-const error = require("./middleware/error");
-const appDebugger = require("debug")("app-debug");
-const helmet = require("helmet");
-
+const config = require("config");
 const posts = require("./routes/posts");
 const express = require("express");
 const app = express();
@@ -14,12 +10,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/posts", posts);
 
-// handle errors
-// ==============
-app.use(error);
+console.log(config.get("name"));
+console.log(process.env.NODE_ENV);
+console.log(process.env.PORT);
 
-console.log(app.get("name"));
-
-app.listen(8000, () => {
-  appDebugger("Listening on port 8000...");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
 });
