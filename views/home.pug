@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+    title= site_title
+  body
+    div(class="container mt-3")
+      h1(class="h1")= header
+      h4 To access the API content, please visit the following urls
+      hr
+      h4 Retrieve all posts by sending a GET REQUEST to:
+      code(class="bg-dark text-white p-2") https://maljuburi-node-api.herokuapp.com/api/posts
+      hr
+      h4 Perform CRUD (Create, Read, Update, Delete) Operations
+      ul
+        li
+          p (CREATE) - POST REQUEST WITH :
+          code { title: value, body: value}
+          br
+          br
+          p To :
+          code(class="bg-dark text-white p-2") https://maljuburi-node-api.herokuapp.com/api/posts
+
+        br
+        li
+          p (Read) - GET REQUEST and replace #[code :id] with desired post id
+          p To :
+          code(class="bg-dark text-white p-2") https://maljuburi-node-api.herokuapp.com/api/posts/:id
+        br
+        li
+          p (Update) - PUT REQUEST and replace #[code :id] with desired post id
+          p With:
+            br
+            code { newTitle: value, newBody: value}
+          p To :
+          code(class="bg-dark text-white p-2") https://maljuburi-node-api.herokuapp.com/api/posts/:id
+        br
+        li
+          p (Delete) - DELETE REQUEST and replace #[code :id] with desired post id
+          p To :
+          code(class="bg-dark text-white p-2") https://maljuburi-node-api.herokuapp.com/api/posts/:id
